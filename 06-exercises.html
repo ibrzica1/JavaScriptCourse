@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    Cart Quantity
+    </title>
+  </head>
+
+  <body>
+    <p>
+      Cart Quantity
+    </p>
+    <button 
+    onclick="console.log('Cart quantity: ' + quantity)">
+      Show Quantity
+    </button>
+    <button
+    onclick="console.log(quantity += 1)
+    if (quantity > 10) {
+      alert('The cart is full');
+      quantity = 10;
+    }
+    ">
+      Add to Cart
+    </button>
+    <button
+    onclick="console.log(quantity += 2)
+    if (quantity > 10) {
+      alert('The cart is full');
+      quantity = 10;
+    }
+    ">
+      +2
+    </button>
+    <button 
+    onclick="console.log(quantity += 3)
+    if (quantity > 10) {
+      alert('The cart is full');
+      quantity = 10;
+    }
+    ">
+      +3
+    </button>
+    <button
+    onclick="console.log(quantity -= 1)
+    if (quantity < 0) {
+      alert('Not enough items in the cart');
+      quantity = 0;
+    }
+    ">
+      Remove from cart
+    </button>
+    <button
+    onclick="console.log(quantity -= 2)
+    if (quantity < 0) {
+      alert('Not enough items in the cart');
+      quantity = 0;
+    }
+    ">
+      -2
+    </button>
+    <button 
+    onclick="console.log(quantity -= 3)
+    if (quantity < 0) {
+      alert('Not enough items in the cart');
+      quantity = 0;
+    }
+    ">
+      -3
+    </button>
+    <button
+    onclick="console.log(quantity = 0)">
+      Reset Cart
+    </button>
+    
+    <script>
+    let quantity = 0
+    </script>
+  </body>
+</html>
