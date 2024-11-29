@@ -16,55 +16,37 @@
     </button>
     <button
     onclick="console.log(quantity += 1)
-    if (quantity > 10) {
-      alert('The cart is full');
-      quantity = 10;
-    }
+    cartIsFull()
     ">
       Add to Cart
     </button>
     <button
     onclick="console.log(quantity += 2)
-    if (quantity > 10) {
-      alert('The cart is full');
-      quantity = 10;
-    }
+    cartIsFull()
     ">
       +2
     </button>
     <button 
     onclick="console.log(quantity += 3)
-    if (quantity > 10) {
-      alert('The cart is full');
-      quantity = 10;
-    }
+    cartIsFull()
     ">
       +3
     </button>
     <button
     onclick="console.log(quantity -= 1)
-    if (quantity < 0) {
-      alert('Not enough items in the cart');
-      quantity = 0;
-    }
+    cartIsEmpty()
     ">
       Remove from cart
     </button>
     <button
     onclick="console.log(quantity -= 2)
-    if (quantity < 0) {
-      alert('Not enough items in the cart');
-      quantity = 0;
-    }
+   cartIsEmpty()
     ">
       -2
     </button>
     <button 
     onclick="console.log(quantity -= 3)
-    if (quantity < 0) {
-      alert('Not enough items in the cart');
-      quantity = 0;
-    }
+    cartIsEmpty()
     ">
       -3
     </button>
@@ -75,6 +57,19 @@
     
     <script>
     let quantity = 0
+    function cartIsEmpty() {
+      if (quantity < 0) {
+      alert('Not enough items in the cart');
+      quantity = 0;
+    }
+    }
+
+    function cartIsFull() {
+      if (quantity > 10) {
+      alert('The cart is full');
+      quantity = 10;
+    }
+    }
     </script>
   </body>
 </html>
