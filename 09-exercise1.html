@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    DOM Exercise
+    </title>
+  </head>
+  <body>
+    <button class="js-9a">9a</button>
+    <button class="js-9b">9b</button>
+    <button onclick="choice = 'heads';
+    play(choice);
+    ">heads</button>
+    <button onclick="choice = 'tails';
+    play(choice);
+    ">tails</button>
+    <p class="js-result"></p>
+    <input placeholder="Name";
+    class="js-input"
+    onkeydown="
+    submitByEnter(event);
+    ">
+    <button onclick="Name()">Submit</button>
+    <script>
+      let choice;
+    console.log(document.querySelector('.js-9a'));
+    document.querySelector('.js-9b').innerHTML =
+     '9b done';
+
+     function play(choice) {
+          document.querySelector('.js-result')
+          .innerHTML = `You chouse: ${choice}`;
+     }
+
+     function Name() {
+      let inputElement = document.querySelector('.js-input');
+      let name = inputElement.value;
+      document.querySelector('.js-result')
+      .innerHTML = `Your name is ${name}`;
+     }
+
+     function submitByEnter() {
+      if(event.key === 'Enter') {
+        Name();
+      }
+     }
+
+    </script>
+  </body>
+</html>

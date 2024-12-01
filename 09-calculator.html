@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Calculator
+      </title>
+  </head>
+  <body>
+    <p>
+      <button onclick="
+        updateCalculation('1');
+        save();
+      ">1</button>
+
+      <button onclick="
+        updateCalculation('2');
+        save();
+      ">2</button>
+
+      <button onclick="
+        updateCalculation('3');
+        save();
+      ">3</button>
+
+      <button onclick="
+        updateCalculation(' + ');
+        save();
+      ">+</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation('4');
+        save();
+      ">4</button>
+
+      <button onclick="
+        updateCalculation('5');
+        save();
+      ">5</button>
+
+      <button onclick="
+        updateCalculation('6');
+        save();
+      ">6</button>
+
+      <button onclick="
+        updateCalculation(' - ');
+        save();
+      ">-</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation('7');
+        save();
+      ">7</button>
+
+      <button onclick="
+        updateCalculation('8');
+        save();
+      ">8</button>
+
+      <button onclick="
+        updateCalculation('9');
+        save();
+      ">9</button>
+
+      <button onclick="
+        updateCalculation(' * ');
+        save();
+      ">*</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation('0');
+        save();
+      ">0</button>
+
+      <button onclick="
+        updateCalculation('.');
+        save();
+      ">.</button>
+
+      <button onclick="
+        
+        calculation = eval(calculation);
+        console.log(calculation);
+        display();
+        save();
+      ">=</button>
+
+      <button onclick="
+        updateCalculation(' / ');
+        save();
+      ">/</button>
+    </p>
+
+    <p>
+      <button onclick="
+        calculation = '';
+        console.log(calculation);
+        localStorage.clear();
+        display();
+      ">Clear</button>
+    </p>
+    <p class="js-display"></p>
+
+    <script>
+      let input;
+      let calculation = JSON.parse(localStorage.getItem('calculation')) || '';
+      display();
+
+      function updateCalculation(value) {
+        input = value;
+        calculation += value;
+        console.log(calculation);
+        save();
+        display();
+      }
+
+      function save(){
+        localStorage.setItem('calculation',JSON.stringify(calculation));
+      }
+
+      function display() {
+        document.querySelector('.js-display')
+        .innerHTML = calculation;
+      }
+    </script>
+  </body>
+</html>
