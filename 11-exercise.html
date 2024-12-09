@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Array Exercise</title>
+  </head>
+  <body>
+    <script >
+     /* let numbers = [10,20,30];
+      console.log(numbers);
+      numbers[2] = 99;
+      console.log(numbers);
+      
+     
+      let lastDigit = 0;
+      function getLastValue(array) {
+        lastDigit = array.length - 1;
+        return array[lastDigit];
+      }
+    console.log(getLastValue(numbers));
+
+      let firstDigit = 0;
+      let lastDigit1 = 0;
+      let index = 0;
+    function arraySwap(array) {
+      index = array.length - 1;
+      firstDigit = array[0];
+      lastDigit1 = array[index];
+     array.splice(0,1);
+     array.unshift(lastDigit1);
+     array.splice(index,1);
+     array.push(firstDigit);
+      console.log(array);
+      return array;
+    }
+    arraySwap(numbers);
+
+function countBy2() {
+    for (let i = 0; i<=10; i+=2) {
+        console.log(i);
+    }}
+    countBy2(); 
+
+    function countDovn() {
+      for (let i = 5; i>=0; i--) {
+        console.log(i);
+      }
+    }
+    countDovn();   
+    
+
+    function i() {
+      let i = 0;
+    while (i < 10) {
+      i+=2;
+      console.log(i);
+    }}
+    i();
+    function countDovn1() {
+      let i = 5;
+      console.log(i);
+      while(i > 0) {
+        i--;
+        console.log(i);
+        
+      }}
+    countDovn1();
+      
+
+      let array1 = [1,2,3];
+      let nevarray = [];
+      for (let i = 0; i < array1.length; i++) {
+        nevarray.push(array1[i]+1);
+      }
+      console.log(nevarray);
+      
+       
+      let appay = [1,-2,3,-6,-10];
+      let appay2 = [23,12,6,-7,3];
+      function addNum(array, num) {
+        let nevarray1 = [];
+        for (let i=0; i < array.length; i++) {
+          nevarray1.push(array[i] + num);
+        }
+        console.log(nevarray1);
+        return nevarray1;
+      }
+      addNum(appay,3);
+
+      function addArrays(array1, array2) {
+        let nevarray2 = [];
+          for (let i = 0; i<array1.length; i++) {
+            nevarray2.push(array1[i]+array2[i]);
+          }
+          console.log(nevarray2);
+          return nevarray2;
+      }
+      addArrays(appay,appay2);
+
+      function countPositive(nums) {
+        let pos = 0;
+        for (let i=0; i<nums.length; i++) {
+          if (nums[i] > 0) {
+            pos+=1;
+          }
+        }
+        console.log(pos);
+        return pos;
+      }
+      countPositive(appay2);
+      
+     const numsObject = {
+        min: 0,
+        max: 0
+     };
+     let array3 = [3]
+
+     function minMax(nums) {
+      let min = 9999;
+      let max = -9999;
+      for (let i = 0; i < nums.length; i++) {
+        if(nums[i]>max) {
+          max = nums[i];
+        }
+        if(nums[i]<min) {
+          min = nums[i];
+        }
+      }
+      if (nums.length === 0) {
+        min = null;
+        max = null;
+      }
+      numsObject.min = min;
+      numsObject.max = max;
+      return numsObject;
+     }
+     minMax(array3);
+     console.log(numsObject);
+      */
+      const array4 = ['apple','orange','grape','apple','apple','grape'];
+      function countWords(input) {
+          let nevObject = {};
+          let nevarray3 = [1];
+          let count = 0;
+          for (let i = 0; i < input.length; i++) {
+            const vord = input[i];
+            if(!nevObject[vord]) {
+              nevObject[vord] = 1;
+            } else {
+              nevObject[vord]++;
+            }
+            
+          }
+          return nevObject;
+      }
+      console.log(countWords(array4));
+
+    </script>
+  </body>
+</html>

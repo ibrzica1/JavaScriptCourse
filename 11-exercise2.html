@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Array nad Loops Exercise 2</title>
+  </head>
+  <body>
+    <script >
+     /* let arrayStrings = ['apple','morning','search','castle','search','castle'];
+    for (let i = 0; i < arrayStrings.length; i++) {
+      if (arrayStrings[i] === 'search') {
+        console.log(i);
+        break;
+      }
+      else {
+        console.log(-1);
+      }
+    }
+
+    function findIndex(array, vord) {
+      for (let i = 0; i < array.length; i++) {
+      if (arrayStrings[i] === vord) {
+        console.log(i);
+        break;
+      }
+      else {
+        console.log(-1);
+      }
+    }}
+    findIndex(arrayStrings, 'castle');
+      
+
+      let foodsArray = ['apple','egg','carrot','egg','apple','egg'];
+      let foodsArray2 = foodsArray.slice().reverse();
+      console.log(foodsArray2);
+      function removeEgg(array) {
+        let eggsRemoved = [];
+        let indexMax = 0;
+        for (let i = 0; i<array.length; i++) {
+          if (array[i] === 'egg' & indexMax<2) {
+            indexMax++;
+            continue;
+          }
+          else {
+            eggsRemoved.push(array[i]);
+          }
+        }
+        return eggsRemoved;
+      }
+      console.log(removeEgg(foodsArray2));
+      
+     
+      for (let i = 1; i <= 20; i++) {
+        if ( i % 3 === 0 & i % 5 === 0) {
+          console.log('FizzBuzz');
+          continue;
+        }
+        if ( i % 3 === 0) {
+          console.log('Fizz');
+          continue;
+        }
+        if ( i % 5 === 0) {
+          console.log('Buzz');
+          continue;
+        }
+        else {
+          console.log(i);
+        }
+        
+      }
+*/
+let foodsArray = ['apple','egg','carrot','egg','apple','egg'];
+
+function findIndex(array, vord) {
+      for (let i = 0; i < array.length; i++) {
+      if (array[i] === vord) {
+        return i;
+      }}
+        return -1;
+    }
+    
+
+      function unique(array) {
+        let uniqueArray = [];
+          for (let i = 0; i < array.length; i++) {
+            const vord = array[i];
+            if (findIndex(uniqueArray,vord) === -1) {
+              uniqueArray.push(vord);
+            }
+          }
+          return uniqueArray;
+      }
+      console.log(unique(foodsArray));
+
+    </script>
+  </body>
+</html>
