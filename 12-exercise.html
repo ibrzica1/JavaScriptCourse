@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced Functions Exercise</title>
+  </head>
+  <body>
+    <button class="js-start-button" onclick="
+      changeAsync();
+      ">Start</button>
+
+      <button class="js-add-button" onclick="
+      displayAdd();
+      ">Add to cart</button>
+      <p class="js-display"></p>
+    <script >
+    let add = function() {
+      console.log(2+3);
+    }
+    for (let i = 0; i < 2; i++) {
+      add();
+    }
+
+    function runTvice(param) {
+      for (let i = 0; i < 2; i++) {
+        param();
+    }}
+
+    runTvice(add);
+
+    const startButton = document.querySelector('.js-start-button');
+    function changeText() {
+      startButton.innerHTML = 'Finished';
+    }
+
+    function changeAsync() {
+      startButton.innerHTML = 'Loading...';
+      setTimeout(changeText,1000);
+    }
+
+    const addToCart = document.querySelector('.js-add-button');
+    const displayCart = document.querySelector('.js-display');
+
+    function displayNull () {
+      displayCart.innerHTML = '';
+    }
+    let isClicked = false;
+    let timeoutId;
+
+    function displayAdd() {
+      
+      displayCart.innerHTML = 'Added';
+
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(displayNull,2000); 
+       
+    
+    }
+
+    </script>
+  </body>
+</html>

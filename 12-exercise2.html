@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Messages</title>
+  </head>
+  <body>
+    <button class="js-add" onclick="
+      addNum();
+      ">Add</button>
+    <button class="js-remove" onclick="
+    removeNum();
+    ">Remove</button>
+    
+    <script >
+let num = 0;
+/*
+function intervalMessages() {
+  function newMessages() {
+  document.title = `(${num}) newMessages`;
+  num += 1;
+}
+    setInterval(newMessages,1000);
+}
+intervalMessages();  */
+
+let add = document.querySelector('.js-add');
+let remove = document.querySelector('.js-remove')
+
+function addNum() {
+  num++
+  document.title = `(${num}) newMessages`;
+}
+function removeNum() {
+  num--;
+  if(num < 0) {
+    document.title = 'App';
+    num = 0;
+  }
+  else if (num >= 0) {
+  document.title = `(${num}) newMessages`; }
+}
+
+
+
+ 
+
+    </script>
+  </body>
+</html>
