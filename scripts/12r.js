@@ -22,18 +22,19 @@ let intervalId;
 /* const autoPlay = () => {
 
 }; */
-
 function autoPlay() {
   if (!isAutoPlaying) {
+    
    intervalId = setInterval(() => {
       const playerMove = pickComputerMove();
   playGame(playerMove);
     },1000);
     isAutoPlaying = true;
-
+    document.querySelector('.js-auto-play-button').innerHTML = 'Stop Playing';
   } else {
     clearInterval(intervalId);
     isAutoPlaying = false;
+    document.querySelector('.js-auto-play-button').innerHTML = 'Auto Play';
   }
 }
 
@@ -51,11 +52,7 @@ document.querySelector('.js-scissors-button')
 });
 document.querySelector('.js-reset-button')
 .addEventListener('click', ()=>{
-  score.wins = 0;
-      score.losses = 0;
-      score.ties = 0;
-      localStorage.removeItem('score');
-      updateScoreElement();
+  resetScore();
 });
 document.querySelector('.js-auto-play-button')
 .addEventListener('click', ()=>{
@@ -69,6 +66,10 @@ document.body.addEventListener('keydown', (event)=>{
     playGame('paper');
   } else if (event.key === 's') {
     playGame('scissors');
+  } else if (event.key === 'a') {
+    autoPlay();
+  } else if (event.key === 'Backspace') {
+    resetScore();
   }
 });
 
@@ -123,6 +124,28 @@ function playGame(playerMove) {
 <img src="images/${playerMove}-emoji.png" class="move-icon">
 <img src="images/${computerMove}-emoji.png" class="move-icon">
 Computer`;
+}
+
+const reset1 = document.querySelector('.js-display-confirmation');
+
+function resetScore() {
+reset1.innerHTML = `Are you sure you want to reset the score? <button class="yes-button js-yes-button">Yes</button> <button class="no-button js-no-button">No</button>`;
+
+const yes = document.querySelector('.js-yes-button');
+const no = document.querySelector('.js-no-button');
+
+yes.addEventListener('click', ()=>{
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+  localStorage.removeItem('score');
+  updateScoreElement();
+  reset1.innerHTML = '';
+});
+
+no.addEventListener('click',()=> {
+  reset1.innerHTML = '';
+})
 }
 
 function updateScoreElement() {

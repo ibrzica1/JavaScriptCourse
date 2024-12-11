@@ -4,24 +4,29 @@
     <title>Messages</title>
   </head>
   <body>
-    <button class="js-add" onclick="
-      addNum();
-      ">Add</button>
-    <button class="js-remove" onclick="
-    removeNum();
-    ">Remove</button>
+    <button class="js-add js-add-button">Add</button>
+    <button class="js-remove js-remove-button">Remove</button>
     
     <script >
 let num = 0;
-/*
-function intervalMessages() {
-  function newMessages() {
+
+/* function intervalMessages() {
+  newMessages= ()=>{
   document.title = `(${num}) newMessages`;
   num += 1;
 }
     setInterval(newMessages,1000);
 }
-intervalMessages();  */
+intervalMessages(); */  
+
+document.querySelector('.js-add-button')
+.addEventListener('click', ()=>{
+  addNum();
+});
+document.querySelector('.js-remove-button')
+.addEventListener('click',()=>{
+  removeNum();
+})
 
 let add = document.querySelector('.js-add');
 let remove = document.querySelector('.js-remove')
